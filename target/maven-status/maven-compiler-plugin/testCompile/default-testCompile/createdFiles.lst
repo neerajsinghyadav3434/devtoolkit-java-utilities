@@ -1,0 +1,5 @@
+com\devtoolkit\datetime\DateFormatterTest.class
+com\devtoolkit\validation\EmailValidatorTest.class
+com\devtoolkit\validation\PasswordValidatorTest.class
+com\devtoolkit\stringutils\StringUtilsTest.class
+com\devtoolkit\math\CalculatorTest.class
