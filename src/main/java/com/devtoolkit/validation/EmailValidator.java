@@ -3,38 +3,39 @@ package com.devtoolkit.validation;
 import java.util.regex.Pattern;
 
 /**
- * EmailValidator – validates whether a string conforms to a standard email address format.
+ * EmailValidator – validates whether a string conforms to a standard email
+ * address format.
  *
- * <p>Uses a well-tested RFC-5321-inspired regular expression for validation.
- * This utility does <em>not</em> perform DNS or SMTP reachability checks.</p>
+ * <p>
+ * Uses a well-tested RFC-5321-inspired regular expression for validation.
+ * This utility does <em>not</em> perform DNS or SMTP reachability checks.
+ * </p>
  *
- * @author  DevToolkit Contributors
+ * @author DevToolkit Contributors
  * @version 1.0.0
  */
 public class EmailValidator {
 
-    /**
-     * RFC-5321-inspired email regex.
-     * Supports common formats: local@domain.tld, user+tag@sub.domain.co
-     */
-    private static final Pattern EMAIL_PATTERN = Pattern.compile(
-        "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$"
-    );
+    /** Email regex pattern – matches local-part @ any domain. */
+    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
 
     // Prevent instantiation – utility class
-    private EmailValidator() {}
+    private EmailValidator() {
+    }
 
     /**
-     * Returns {@code true} if the supplied string is a syntactically valid email address.
+     * Returns {@code true} if the supplied string is a syntactically valid email
+     * address.
      *
      * @param email the email address to validate; may be {@code null}
-     * @return {@code true} if valid, {@code false} if {@code null}, blank, or malformed
+     * @return {@code true} if valid, {@code false} if {@code null}, blank, or
+     *         malformed
      */
     public static boolean isValid(String email) {
-        if (email == null || email.isBlank()) {
+        if (email == null) {
             return false;
         }
-        return EMAIL_PATTERN.matcher(email.trim()).matches();
+        return EMAIL_PATTERN.matcher(email).matches();
     }
 
     /**
