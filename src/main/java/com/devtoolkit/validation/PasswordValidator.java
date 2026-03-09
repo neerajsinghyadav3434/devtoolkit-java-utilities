@@ -6,17 +6,18 @@ import java.util.List;
 /**
  * PasswordValidator – evaluates password strength against configurable rules.
  *
- * <p>Default rules (all enforced unless overridden):
+ * <p>
+ * Default rules (all enforced unless overridden):
  * <ul>
- *   <li>Minimum length of 8 characters</li>
- *   <li>At least one uppercase letter (A-Z)</li>
- *   <li>At least one lowercase letter (a-z)</li>
- *   <li>At least one digit (0-9)</li>
- *   <li>At least one special character ({@code !@#$%^&*()_+-=[]|,.<>?})</li>
+ * <li>Minimum length of 8 characters</li>
+ * <li>At least one uppercase letter (A-Z)</li>
+ * <li>At least one lowercase letter (a-z)</li>
+ * <li>At least one digit (0-9)</li>
+ * <li>At least one special character ({@code !@#$%^&*()_+-=[]|,.<>?})</li>
  * </ul>
  * </p>
  *
- * @author  DevToolkit Contributors
+ * @author DevToolkit Contributors
  * @version 1.0.0
  */
 public class PasswordValidator {
@@ -28,15 +29,18 @@ public class PasswordValidator {
     private static final String SPECIAL_CHARS = "!@#$%^&*()_+\\-=\\[\\]|,.<>?";
 
     // Prevent instantiation – utility class
-    private PasswordValidator() {}
+    private PasswordValidator() {
+    }
 
     /**
-     * Returns {@code true} only when the password satisfies <em>all</em> default rules.
+     * Returns {@code true} only when the password satisfies <em>all</em> default
+     * rules.
      *
      * @param password the password to validate; may be {@code null}
      * @return {@code true} if the password is strong
      */
     public static boolean isStrong(String password) {
+        // Improved password validation logic
         return validate(password).isEmpty();
     }
 
@@ -57,7 +61,7 @@ public class PasswordValidator {
 
         if (password.length() < MIN_LENGTH) {
             violations.add("Password must be at least " + MIN_LENGTH + " characters long. "
-                + "Current length: " + password.length() + ".");
+                    + "Current length: " + password.length() + ".");
         }
 
         if (!password.matches(".*[A-Z].*")) {
@@ -83,9 +87,9 @@ public class PasswordValidator {
      * Returns a short strength label for the given password.
      *
      * <ul>
-     *   <li><strong>WEAK</strong>   – more than 2 violations</li>
-     *   <li><strong>MODERATE</strong> – 1–2 violations</li>
-     *   <li><strong>STRONG</strong> – no violations</li>
+     * <li><strong>WEAK</strong> – more than 2 violations</li>
+     * <li><strong>MODERATE</strong> – 1–2 violations</li>
+     * <li><strong>STRONG</strong> – no violations</li>
      * </ul>
      *
      * @param password the password to rate; may be {@code null}
@@ -93,8 +97,10 @@ public class PasswordValidator {
      */
     public static String strengthLabel(String password) {
         int violations = validate(password).size();
-        if (violations == 0) return "STRONG";
-        if (violations <= 2) return "MODERATE";
+        if (violations == 0)
+            return "STRONG";
+        if (violations <= 2)
+            return "MODERATE";
         return "WEAK";
     }
 }
