@@ -52,13 +52,13 @@ public class StringUtils {
      * string,
      * collapsing multiple spaces between words into a single space.
      *
-     * @param input the string to normalise; must not be {@code null}
-     * @return the normalised string
-     * @throws IllegalArgumentException if {@code input} is {@code null}
+     * @param input the string to normalise; may be {@code null}
+     * @return the normalised string, or {@code null} if {@code input} is
+     *         {@code null}
      */
     public static String removeExtraSpaces(String input) {
         if (input == null) {
-            throw new IllegalArgumentException("Input string must not be null.");
+            return null;
         }
         return input.trim().replaceAll("\\s+", " ");
     }
@@ -84,10 +84,10 @@ public class StringUtils {
     /**
      * Checks whether the given string is blank (null, empty, or whitespace-only).
      *
-     * @param input the string to check
+     * @param s the string to check
      * @return {@code true} if blank
      */
-    public static boolean isBlank(String input) {
-        return input == null || input.isBlank();
+    public static boolean isBlank(String s) {
+        return s == null || s.trim().isEmpty();
     }
 }
