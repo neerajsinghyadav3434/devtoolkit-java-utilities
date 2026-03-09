@@ -22,6 +22,8 @@
   - [Using as a Library](#using-as-a-library)
 - [Modules & API Reference](#-modules--api-reference)
 - [Running Tests](#-running-tests)
+- [Example CLI Session](#-example-cli-session)
+- [Learning Purpose](#-learning-purpose)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -229,6 +231,55 @@ target/surefire-reports/
 - ✅ Edge cases (empty strings, zero values, boundary inputs)
 - ✅ Null-input handling
 - ✅ Exception assertions (`ArithmeticException`, `IllegalArgumentException`)
+
+---
+
+## 📖 Example CLI Session
+
+Example usage of the DevToolkit CLI after running `mvn exec:java`:
+
+```
+  ┌─────────────────────────────────────────┐
+  │              MAIN MENU                  │
+  └─────────────────────────────────────────┘
+  Enter your choice: 1
+
+  ── Reverse a String ──
+  Enter a string: hello
+  ✅  Reversed: olleh
+
+  Enter your choice: 4
+
+  ── Email Validator ──
+  Enter an email address: user@example.com
+  ✅  Valid email.
+      Local part : user
+      Domain     : example.com
+
+  Enter your choice: 6
+
+  ── Calculator ──
+  Operations:  1) Add  2) Subtract  3) Multiply  4) Divide  5) Power  6) Square Root
+  Select operation: 1
+  Enter first number : 12
+  Enter second number: 8
+  ✅  Result = 20.0000
+
+  Enter your choice: 0
+  👋  Thank you for using DevToolkit. Goodbye!
+```
+
+---
+
+## 💡 Learning Purpose
+
+This project demonstrates:
+
+- **Clean Java project structure** – modular packages and single-responsibility classes
+- **Maven-based build system** – dependency management, compilation, and test execution
+- **CLI application design** – interactive menus, input validation, and user feedback
+- **Unit testing with JUnit 5** – test cases for normal, edge, and error scenarios
+- **Open-source contribution workflow** – branching strategy, commit conventions, PR and issue templates
 
 ---
 
