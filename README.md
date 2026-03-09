@@ -9,6 +9,8 @@
 </p>
 
 > A beginner-friendly, well-structured Java utility library providing everyday developer helpers — ideal as a first open-source contribution or a learning reference.
+>
+> DevToolkit helps developers with common utility functions.
 
 ---
 
