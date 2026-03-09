@@ -34,14 +34,44 @@ public class PasswordValidator {
 
     /**
      * Returns {@code true} only when the password satisfies <em>all</em> default
+<<<<<<< HEAD
      * rules.
+=======
+     * rules:
+     * minimum 8 characters, at least one uppercase letter, one digit, and one
+     * special character.
+>>>>>>> e4379ba8824c71d9976e0792ee3cd7d45b5db36b
      *
      * @param password the password to validate; may be {@code null}
      * @return {@code true} if the password is strong
      */
     public static boolean isStrong(String password) {
+<<<<<<< HEAD
         // Improved password validation logic
         return validate(password).isEmpty();
+=======
+
+        if (password == null || password.length() < 8)
+            return false;
+
+        boolean hasUpper = false;
+        boolean hasDigit = false;
+        boolean hasSpecial = false;
+
+        for (char c : password.toCharArray()) {
+
+            if (Character.isUpperCase(c))
+                hasUpper = true;
+
+            else if (Character.isDigit(c))
+                hasDigit = true;
+
+            else if (!Character.isLetterOrDigit(c))
+                hasSpecial = true;
+        }
+
+        return hasUpper && hasDigit && hasSpecial;
+>>>>>>> e4379ba8824c71d9976e0792ee3cd7d45b5db36b
     }
 
     /**

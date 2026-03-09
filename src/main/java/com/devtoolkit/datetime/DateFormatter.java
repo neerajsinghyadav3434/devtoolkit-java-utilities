@@ -52,7 +52,12 @@ public class DateFormatter {
      * @return formatted date string for today
      */
     public static String formatToday(String pattern) {
-        return format(LocalDate.now(), pattern);
+
+        LocalDate today = LocalDate.now();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+
+        return today.format(formatter);
     }
 
     /**
