@@ -12,6 +12,8 @@
 
 ---
 
+Additional documentation improvement.
+
 ## 📋 Table of Contents
 
 - [Features](#-features)
