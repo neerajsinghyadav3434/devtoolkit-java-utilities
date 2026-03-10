@@ -1,5 +1,7 @@
 # 🛠️ DevToolkit – Java Developer Utility Library
 
+Minor documentation improvement for DevToolkit utilities.
+
 <p align="center">
   <img src="https://img.shields.io/badge/Java-17-orange?logo=java" alt="Java 17"/>
   <img src="https://img.shields.io/badge/Build-Maven-blue?logo=apache-maven" alt="Maven"/>
