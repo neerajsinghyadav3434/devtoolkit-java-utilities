@@ -18,6 +18,8 @@ DevToolkit helps Java developers with commonly used utility functions.
 
 ---
 
+Additional documentation improvement.
+
 ## 📋 Table of Contents
 
 - [Features](#-features)
