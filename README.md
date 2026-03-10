@@ -316,3 +316,6 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 </p>
 
 
+
+
+Collaboration test for Pair Extraordinaire badge.
