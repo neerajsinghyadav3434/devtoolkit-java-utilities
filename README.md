@@ -10,6 +10,8 @@
 
 > A beginner-friendly, well-structured Java utility library providing everyday developer helpers — ideal as a first open-source contribution or a learning reference.
 
+DevToolkit helps Java developers with commonly used utility functions.
+
 ---
 
 ## 📋 Table of Contents
@@ -255,3 +257,5 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
   <a href="CONTRIBUTING.md">Contribute</a> · 
   <a href="https://github.com/yourusername/DevToolkit/issues">Report Bug</a>
 </p>
+
+
